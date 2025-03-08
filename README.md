@@ -1,2 +1,2 @@
 # romsets-update
-repo to keep script to help romsets update regularly and automatically
+repo of scripts to help romsets update regularly and automatically
