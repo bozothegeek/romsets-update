@@ -1,5 +1,5 @@
 #!/bin/bash
-# example to call this script: ./download_mame_romset_updates.sh -v 0.275 -s /home/user/ROMSETS/MAME -u "https://xxx.yyy/mame/index.html"
+# example to call this script: ./download_mame_romset_updates.sh -v 0.275 -s /home/user/ROMSETS/MAME -u https://pleasuredome.github.io/pleasuredome/mame/index.html
 # script to check regularly if a specific version of romset is available
 # and if available we inject it in qbittorent to be downloaded immediately
 
@@ -72,7 +72,7 @@ else
   echo  "$MAGNET_UPDATE_ROMS" > magnet_update_roms.txt
   if [[ "$MAGNET_UPDATE_ROMS" == magnet* ]]; then
     echo "MAGNET_UPDATE_ROMS contains 'magnet'."
-    ./qbt_inject_magnet.sh -m $MAGNET_UPDATE_ROMS -s $SAVE_PATH
+    bash ../tools/qbt_inject_magnet.sh -m $MAGNET_UPDATE_ROMS -s $SAVE_PATH
     if [ $? -eq 0 ]; then
       echo "inject magnet to update roms in qbittorent successful!"
     else
@@ -97,7 +97,7 @@ else
   echo  "$MAGNET_UPDATE_CHDS" > magnet_update_chds.txt
   if [[ "$MAGNET_UPDATE_CHDS" == magnet* ]]; then
     echo "MAGNET_UPDATE_CHDS contains 'magnet'."
-    ./qbt_inject_magnet.sh -m $MAGNET_UPDATE_CHDS -s $SAVE_PATH
+    bash ../tools/qbt_inject_magnet.sh -m $MAGNET_UPDATE_CHDS -s $SAVE_PATH
     if [ $? -eq 0 ]; then
       echo "inject magnet to update chds in qbittorent successful!"
     else
