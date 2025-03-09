@@ -1,5 +1,5 @@
 #!/bin/bash
-# example to call this script: ./download_mame_romset_updates.sh -v 0.275 -s /home/user/ROMSETS/MAME -u https://pleasuredome.github.io/pleasuredome/mame/index.html
+# example to call this script: ./update_romset_by_version.sh -v 0.275 -s /home/user/ROMSETS/MAME -u https://pleasuredome.github.io/pleasuredome/mame/index.html
 # script to check regularly if a specific version of romset is available
 # and if available we inject it in qbittorent to be downloaded immediately
 
