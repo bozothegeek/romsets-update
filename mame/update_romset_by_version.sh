@@ -67,7 +67,8 @@ if find $SAVE_PATH -maxdepth 1 -type d -name "$pattern" -print -quit 2>/dev/null
   echo "Directory matching '$pattern' already exists - no new download to do"
 else
   echo "Directory matching '$pattern' does not exist."
-  MAGNET_UPDATE_ROMS=$(cat ${FILE_TO_SAVE} | grep -i "Set:" | grep -i "Update ROMs" | grep -i "${VERSION_TO_FIND}" | grep -o 'href="[^"]*"' | sed 's/href="//; s/"//')
+  #echo "cat ${FILE_TO_SAVE} | grep -i 'Set:' | grep -i 'Update ROMs' | grep -i '${MAME_VERSION_TO_FIND}'"
+  MAGNET_UPDATE_ROMS=$(cat ${FILE_TO_SAVE} | grep -i "Set:" | grep -i "Update ROMs" | grep -i "${MAME_VERSION_TO_FIND}" | grep -o 'href="[^"]*"' | sed 's/href="//; s/"//')
   echo "MAGNET_UPDATE_ROMS: $MAGNET_UPDATE_ROMS"
   echo  "$MAGNET_UPDATE_ROMS" > magnet_update_roms.txt
   if [[ "$MAGNET_UPDATE_ROMS" == magnet* ]]; then
@@ -80,7 +81,7 @@ else
       exit 1
     fi
   else
-    echo "MAGNET_UPDATE_ROMS does not contain 'magnet'."
+    echo "MAGNET_UPDATE_ROMS does not contain 'magnet' / should not exists for this version"
   fi
 fi
 
@@ -92,7 +93,8 @@ if find $SAVE_PATH -maxdepth 1 -type d -name "$pattern" -print -quit 2>/dev/null
   echo "Directory matching '$pattern' already exists - no new download to do"
 else
   echo "Directory matching '$pattern' does not exist."
-  MAGNET_UPDATE_CHDS=$(cat ${FILE_TO_SAVE} | grep -i "Set:" | grep -i "Update CHDs" | grep -i "${VERSION_TO_FIND}" | grep -o 'href="[^"]*"' | sed 's/href="//; s/"//')
+  #echo "cat ${FILE_TO_SAVE} | grep -i 'Set:' | grep -i 'Update CHDs' | grep -i '${MAME_VERSION_TO_FIND}'"
+  MAGNET_UPDATE_CHDS=$(cat ${FILE_TO_SAVE} | grep -i "Set:" | grep -i "Update CHDs" | grep -i "${MAME_VERSION_TO_FIND}" | grep -o 'href="[^"]*"' | sed 's/href="//; s/"//')
   echo "MAGNET_UPDATE_CHDS: $MAGNET_UPDATE_CHDS"
   echo  "$MAGNET_UPDATE_CHDS" > magnet_update_chds.txt
   if [[ "$MAGNET_UPDATE_CHDS" == magnet* ]]; then
@@ -105,6 +107,6 @@ else
       exit 1
     fi
   else
-    echo "MAGNET_UPDATE_CHDS does not contain 'magnet'."
+    echo "MAGNET_UPDATE_CHDS does not contain 'magnet' / should not exists for this version"
   fi
 fi
