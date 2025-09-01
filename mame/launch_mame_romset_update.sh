@@ -19,7 +19,7 @@ done
 
 # Define variables (replace with your details)
 GITHUB_TAG_NAME=mame${mame_version}
-SAVE_PATH=/home/bozo/ROMSETS/MAME # CHANGE WITH YOUR LOCAL DOWNLOAD/SAVE PATH !
+SAVE_PATH=/home/bozo/ROMSETS/MAME/UPDATES # CHANGE WITH YOUR LOCAL DOWNLOAD/SAVE PATH !
 UPDATES_LIST_URL=https://pleasuredome.github.io/pleasuredome/mame/index.html # CHANGE WITH REPO/SITE URL WITH UPDATES MAGNET URLS
 
 #clean files in all cases before to get info (in case of any previous stop of the script on issue)
@@ -60,3 +60,7 @@ rm -f commit.txt
 rm -f date.txt
 rm -f release_notes.md
 rm -f release_id.txt
+rm -f mame_update_rom_dat.zip
+rm -f machine_updated_names.txt
+rm -f mame.html
+rm -f magnet_*.txt
